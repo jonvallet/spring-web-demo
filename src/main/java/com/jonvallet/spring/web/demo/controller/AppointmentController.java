@@ -15,20 +15,20 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Jon Vallet
  */
 @RestController
-@RequestMapping("/appointment")
+@RequestMapping("/appointments")
 public class AppointmentController {
 
     @Autowired
     AppointmentRepository repository;
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(value="/list", method = RequestMethod.GET)
     public Page<Appointment> getPage(@RequestParam(value = "page", defaultValue = "0") int page,
                                      @RequestParam(value = "items", defaultValue = "20") int items) {
 
         return repository.findAll(new PageRequest(page, items));
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value="/create", method = RequestMethod.POST)
     public void create(@RequestBody Appointment appointment) {
         repository.save(appointment);
     }
