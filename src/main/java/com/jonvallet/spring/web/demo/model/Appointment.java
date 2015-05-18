@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 /**
@@ -15,7 +17,10 @@ public class Appointment {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
+    @NotNull
+    @Size(min = 1, max = 255)
     private String description;
+    @NotNull
     private Date date;
 
     protected Appointment(){}
@@ -31,14 +36,6 @@ public class Appointment {
 
     public Date getDate() {
         return date;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
     }
 
     @Override

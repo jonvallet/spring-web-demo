@@ -11,6 +11,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import javax.validation.ConstraintViolationException;
 import java.util.Date;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -40,6 +41,16 @@ public class WebDemoApplicationTests {
 
         Assert.assertEquals(expectedValue.getDescription(), actualValue.getDescription());
         Assert.assertEquals(expectedValue.getDate(), actualValue.getDate());
+    }
+
+    @Test(expected = ConstraintViolationException.class)
+    public void testCreateAppointmentWithEmptyValuesShouldFail(){
+        try {
+            controller.create(new Appointment("", null));
+        }catch (ConstraintViolationException validationException){
+            Assert.assertTrue(validationException.getConstraintViolations().size() == 2);
+            throw validationException;
+        }
     }
 
 }
