@@ -48,11 +48,15 @@
                         </div>
                         <div class="form-group">
                             <div class="col-sm-12 text-right">
-                                <button type="button" class="btn btn-default preview-add-button" ng-click="create(appointment)" ng-disabled="form.$invalid">
+                                <button type="button" class="btn btn-default preview-add-button" ng-click="create(appointment)"
+                                        ng-disabled="form.$invalid" title="Tooltip on top">
                                     <span class="glyphicon glyphicon-plus"></span> Create
                                 </button>
+
                             </div>
                         </div>
+                        <div ng-show="form.$invalid" class="alert alert-warning" role="alert">Date and Description are mandatory</div>
+                        <div ng-show="error" class="alert alert-danger" role="alert">{{errorMessage}}</div>
                     </form>
                 </div>
             </div>
