@@ -5,5 +5,9 @@
 #Maven files
 target
 
+#Gradle files
+.gradle
+build
+
 #Other
 derby.log
