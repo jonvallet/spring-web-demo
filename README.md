@@ -11,5 +11,11 @@ Then, you can start the server with maven
 mvn spring-boot:run
 ```
 
+Or with gradle
+
+```bash
+gradle run
+```
+
 Now you can access the web application 
 [http://localhost:8080/appointments](http://localhost:8080/appointments)
