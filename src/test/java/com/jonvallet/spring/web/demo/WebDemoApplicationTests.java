@@ -1,5 +1,6 @@
-package demo;
+package com.jonvallet.spring.web.demo;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.web.WebAppConfiguration;
@@ -14,5 +15,10 @@ public class WebDemoApplicationTests {
 	@Test
 	public void contextLoads() {
 	}
+
+    @Test
+    public void testCreateAppointment(){
+        Assert.fail();
+    }
 
 }
