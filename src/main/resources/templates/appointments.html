@@ -18,7 +18,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr ng-repeat="appointment in appointments.content">
+                    <tr ng-repeat="appointment in appointments">
                         <td>{{appointment.description}}</td>
                         <td>{{appointment.date | date:'MM/dd/yyyy'}}</td>
                     </tr>
@@ -37,18 +37,18 @@
                         <div class="form-group">
                             <label for="date" class="col-sm-3 control-label">Date</label>
                             <div class="col-sm-9">
-                                <input type="date" class="form-control" id="date" name="date"/>
+                                <input type="date" class="form-control" id="date" name="date" ng-model="appointment.date"/>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="description" class="col-sm-3 control-label">Description</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="description" name="description"/>
+                                <input type="text" class="form-control" id="description" name="description" ng-model="appointment.description"/>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-12 text-right">
-                                <button type="button" class="btn btn-default preview-add-button">
+                                <button type="button" class="btn btn-default preview-add-button" ng-click="create(appointment)">
                                     <span class="glyphicon glyphicon-plus"></span> Create
                                 </button>
                             </div>
