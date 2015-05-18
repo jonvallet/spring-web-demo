@@ -2,7 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en" ng-app="app">
 <head>
     <title>Naked Java Appointments</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
+          rel="stylesheet"/>
 </head>
 <body ng-controller="appCtrl">
 <div class="container">
