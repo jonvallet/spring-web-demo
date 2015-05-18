@@ -15,12 +15,37 @@ public class Appointment {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
-    public final String description;
-    public final Date date;
+    private String description;
+    private Date date;
+
+    protected Appointment(){}
 
     public Appointment(String description, Date date){
         this.description = description;
         this.date = date;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    @Override
+    public String toString() {
+        return "Appointment{" +
+                "description='" + description + '\'' +
+                ", date=" + date +
+                '}';
+    }
 }
