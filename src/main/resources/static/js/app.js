@@ -14,8 +14,8 @@ app.controller('appCtrl', function ($scope, $http) {
         $http.post("/appointments/create", appointment).success(function(){
             $scope.appointments.push(angular.copy(appointment))
             $scope.appointment = {}
+            $scope.error=false
         }).error(function(data){
-            $scope.success = false
             $scope.errorMessage=data
             $scope.error=true
         })
